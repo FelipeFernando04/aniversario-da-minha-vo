@@ -1,18 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cakeContainer = document.getElementById('cakeContainer');
-    const infoOverlay = document.getElementById('infoOverlay');
-    const closeInfoButton = document.getElementById('closeInfo');
+    const conviteContainer = document.getElementById('conviteContainer');
+    const cliqueAquiMsg = document.getElementById('cliqueAqui');
 
-    cakeContainer.addEventListener('click', function() {
-        // Toggle the 'flipped' class on the cake-container
-        cakeContainer.classList.toggle('flipped');
+    conviteContainer.addEventListener('click', function() {
+        // Adiciona ou remove a classe 'virado' para fazer a animação de virar
+        this.classList.toggle('virado');
+
+        // Esconde a mensagem "Clique aqui" para sempre depois do primeiro clique
+        if (!cliqueAquiMsg.classList.contains('escondido')) {
+            cliqueAquiMsg.classList.add('escondido');
+        }
     });
-
-    closeInfoButton.addEventListener('click', function(event) {
-        event.stopPropagation(); // Previne que o clique no botão feche e reabra instantaneamente
-        cakeContainer.classList.remove('flipped');
-    });
-
-    // Opcional: Fechar ao clicar fora do overlay (se o overlay fosse um modal)
-    // Para este design, o botão de fechar é mais intuitivo.
 });
