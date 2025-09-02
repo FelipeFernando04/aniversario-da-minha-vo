@@ -1,0 +1,163 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais divertida */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #ffebcd, #ffc0cb); /* Fundo suave */
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #333;
+    overflow-x: hidden; /* Previne rolagem horizontal */
+}
+
+.container {
+    background-color: #fff;
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 380px; /* Otimizado para telas menores */
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* Garante que elementos filhos não vazem */
+}
+
+h1 {
+    color: #e91e63; /* Rosa mais vibrante */
+    margin-bottom: 8px;
+    font-size: 1.8em; /* Tamanho da fonte ajustado para mobile */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #4a148c; /* Roxo */
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.cake-container {
+    position: relative;
+    width: 90%; /* Ocupa mais espaço em mobile */
+    max-width: 280px;
+    margin: 0 auto 25px auto;
+    cursor: pointer;
+    perspective: 1000px; /* Para efeito 3D no flip */
+}
+
+.cake-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+    backface-visibility: hidden; /* Esconde a parte de trás durante a animação */
+}
+
+.cake-container.flipped .cake-image {
+    transform: rotateY(180deg);
+}
+
+.info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top left, #ffe0e9, #fffafa); /* Fundo suave para o overlay */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    transform: rotateY(-180deg); /* Começa virado */
+    backface-visibility: hidden;
+}
+
+.cake-container.flipped .info-overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: rotateY(0deg);
+}
+
+
+.info-overlay p {
+    margin: 8px 0;
+    color: #6a1b9a; /* Roxo escuro */
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.info-overlay strong {
+    color: #e91e63;
+}
+
+.info-overlay .share-plate {
+    font-style: italic;
+    color: #880e4f;
+    margin-top: 18px;
+    font-size: 1.05em;
+    font-weight: bold;
+}
+
+.info-overlay .rsvp {
+    font-size: 0.9em;
+    color: #9c27b0;
+}
+
+.close-info {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.close-info:hover {
+    background-color: #d81b60;
+}
+
+.lurdica-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 25px;
+    border: 4px solid #ff69b4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries para ajuste fino em telas menores */
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.6em;
+    }
+    h2 {
+        font-size: 1.1em;
+    }
+    .container {
+        padding: 20px 15px;
+    }
+    .info-overlay p {
+        font-size: 1em;
+    }
+    .lurdica-photo {
+        width: 100px;
+        height: 100px;
+    }
+}
