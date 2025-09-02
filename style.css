@@ -1,141 +1,120 @@
-/* Estilos Gerais */
+/* Design 100% focado em mobile */
 body {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #fde4e1, #e6e6fa);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     min-height: 100vh;
     box-sizing: border-box;
 }
 
-/* Container Principal do Convite */
-.convite-container {
+.convite {
     background-color: #ffffff;
     width: 100%;
-    max-width: 400px;
-    padding: 30px 20px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 380px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    position: relative;
     overflow: hidden;
 }
 
-/* Foto da Vovó */
-.foto-vo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 5px solid #ffb6c1; /* Rosa claro */
-    object-fit: cover;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Textos */
-h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5em;
-    color: #c71585; /* Rosa mais forte */
-    margin: 0;
-    line-height: 1;
-}
-
-.subtitulo {
-    font-size: 1.1em;
-    color: #555;
-    margin-top: 5px;
-    margin-bottom: 25px;
-}
-
-/* Estrutura da Carta que Vira */
-.carta {
-    position: relative;
+.foto-principal {
     width: 100%;
     height: 250px;
-    perspective: 1500px; /* Efeito de profundidade 3D */
-    cursor: pointer;
+    object-fit: cover; /* Garante que a foto preencha o espaço sem distorcer */
 }
 
-.lado {
-    position: absolute;
+.conteudo {
+    padding: 15px 25px;
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #333;
+    margin: 0;
+}
+
+.chamada {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.botao {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    margin: 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #0056b3;
+}
+
+/* Detalhes da Festa (Overlay) */
+.detalhes {
+    position: fixed; /* Fica por cima de tudo */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Esconde o lado de trás */
-    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.frente {
-    background-color: #fff8f9;
-}
-
-.verso {
-    background: linear-gradient(to bottom, #fdfbfb, #ebedee);
-    transform: rotateY(180deg); /* Começa virado */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Quando o container tiver a classe 'virado', a carta gira */
-.convite-container.virado .carta {
-    transform: rotateY(180deg);
-}
-
-/* Imagem do Bolo */
-.imagem-bolo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Mensagem "Clique Aqui" */
-.clique-aqui {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: bold;
-    pointer-events: none; /* Para não atrapalhar o clique */
-    transition: opacity 0.5s;
-}
-
-/* Classe para esconder a mensagem de clique */
-.clique-aqui.escondido {
+    
+    /* Animação de fade */
     opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-/* Informações no Verso */
-.verso h2 {
-    color: #c71585;
+.detalhes.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.detalhes-conteudo {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 85%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.detalhes-conteudo h2 {
     margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.8em;
+    color: #007bff;
 }
 
-.info p {
+.detalhes-conteudo p {
     font-size: 1.2em;
+    line-height: 1.6;
     color: #333;
-    margin: 8px 0;
 }
 
-.mensagem-extra {
+.detalhes-conteudo .extra {
     font-style: italic;
-    margin-top: 25px;
-    color: #666;
-    font-size: 1em;
-    padding: 0 10px;
+    margin-top: 20px;
+    color: #555;
+}
+
+.botao-fechar {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
 }
