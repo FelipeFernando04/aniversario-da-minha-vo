@@ -1,38 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite de Aniversário</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="convite">
-        
-        <img src="foto-da-vo.jpg" alt="Foto da Vovó" class="foto-principal">
-        <div class="conteudo">
-            <h1>Lurdica</h1>
-            <p class="chamada">Convida você para uma celebração especial!</p>
+<div class="cake-container" id="cakeContainer">
+    <div class="cake-inner">
+        <!-- Frente -->
+        <div class="cake-front">
+            <img src="bolo.png" alt="Bolo de Aniversário" class="cake-image">
         </div>
-
-        <div class="botao" id="botaoVerDetalhes">
-            Clique aqui para ver os detalhes
+        <!-- Verso -->
+        <div class="info-overlay" id="infoOverlay">
+            <p><strong>Dia:</strong> 13 de Setembro</p>
+            <p><strong>Local:</strong> Casa da Lurdica</p>
+            <p class="share-plate">Traga um prato para compartilhar!</p>
+            <p class="rsvp">Contamos com sua presença!</p>
+            <button class="close-info" id="closeInfo">X</button>
         </div>
-
-        <div class="detalhes" id="detalhesFesta">
-            <div class="detalhes-conteudo">
-                <h2>Informações da Festa</h2>
-                <p><strong>🗓️ Dia:</strong> 13 de Setembro</p>
-                <p><strong>🏠 Local:</strong> Casa da Lurdica</p>
-                <p class="extra">"Traga um prato para compartilhar!"</p>
-                <button class="botao-fechar" id="botaoFechar">Fechar</button>
-            </div>
-        </div>
-
     </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
+</div>
