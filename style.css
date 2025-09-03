@@ -5,33 +5,35 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* mantém top em cima e bottom embaixo */
   background: linear-gradient(to bottom right, #ffebcd, #ffc0cb);
   color: #333;
+  box-sizing: border-box;
 }
 
-/* Containers ocupam quase toda largura */
+/* Containers */
 .container {
   width: 100%;
-  padding: 20px;
   text-align: center;
   box-sizing: border-box;
 }
 
-/* Topo */
+/* Topo centralizado */
 .container.top {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
-/* Base */
+/* Base fixada no rodapé */
 .container.bottom {
   background: #fff;
   border-radius: 25px 25px 0 0;
   box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-  padding: 30px 20px;
+  padding: 25px 20px 35px;
 }
 
 /* Textos */
@@ -49,7 +51,7 @@ h2 {
   font-weight: 400;
 }
 
-/* Bolo */
+/* Bolo com efeito flip */
 .cake-container {
   perspective: 1000px;
   width: 90%;
